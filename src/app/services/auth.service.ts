@@ -26,12 +26,12 @@ export class AuthService {
   iniAuth(){
     if (typeof localStorage !== "undefined") {
       const data = JSON.parse(localStorage.getItem('auth'));
-      console.log(data)
+
        if (data) {
-        if (data.UserId && data.token) {
-          data.UserId=data.UserId;
-          data.token=data.token;
-          data.isAuth$.next(true);
+         if (data.UserId && data.token) {
+          this.UserId=data.UserId;
+          this.token=data.token;
+          this.isAuth$.next(true);
         }
       }
     }
@@ -52,14 +52,10 @@ export class AuthService {
             this.UserId =data["user"]["id"];
             this.token=data["token"];
             this.isAuth$.next(true);
-            this.datas={
-              "UserId": this.UserId,
-              "token": this.token,
-              "isAuth$": this.isAuth$,
-            }
+
             //save  data users in local
             if (typeof localStorage !== "undefined") {
-              localStorage.setItem('auth',JSON.stringify(this.datas))
+              localStorage.setItem('auth',JSON.stringify({UserId:data["user"]["id"], token: data["token"]}))
             }
             resolve(true);
             } else {
