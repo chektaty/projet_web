@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SinginComponent } from './components/auth/singin/singin.component';
@@ -17,6 +17,7 @@ import { HeaderPageComponent } from './components/partiels/header-page/header-pa
 import { QuickViewModalComponent } from './components/partiels/modal/quick-view-modal/quick-view-modal.component';
 import { AddToCartModalComponent } from './components/partiels/modal/add-to-cart-modal/add-to-cart-modal.component';
 import { DeleteProductModalComponent } from './components/partiels/modal/delete-product-modal/delete-product-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { DeleteProductModalComponent } from './components/partiels/modal/delete-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
