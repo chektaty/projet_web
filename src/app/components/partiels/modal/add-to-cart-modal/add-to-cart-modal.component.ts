@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-add-to-cart-modal',
   templateUrl: './add-to-cart-modal.component.html',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddToCartModalComponent implements OnInit {
 
-  constructor() { }
+
+  constructor() {
+    //intialisation du formulaire
+
+
+  }
 
   ngOnInit(): void {
   }

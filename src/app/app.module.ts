@@ -18,6 +18,10 @@ import { QuickViewModalComponent } from './components/partiels/modal/quick-view-
 import { AddToCartModalComponent } from './components/partiels/modal/add-to-cart-modal/add-to-cart-modal.component';
 import { DeleteProductModalComponent } from './components/partiels/modal/delete-product-modal/delete-product-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -35,13 +39,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderPageComponent,
     QuickViewModalComponent,
     AddToCartModalComponent,
-    DeleteProductModalComponent
+    DeleteProductModalComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

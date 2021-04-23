@@ -39,11 +39,13 @@ export class ProductService {
   }
 
   getProductByID(id:string){
+    let params =  "id="+id;
+
     return new Promise((resolve,reject)=>{
-      this.http.post(this.base_path + 'list/produits',id, {'headers':this.headers}).subscribe(
+      this.http.post(this.base_path + 'list/produits',params, {'headers':this.headers}).subscribe(
         (data:Data)=>{
             // authification
-            console.log(data);
+            console.log(data.data);
             if (data["success"]) {
 
             resolve(data.data);
@@ -106,8 +108,9 @@ export class ProductService {
   }
 
   DeleteProduct(id:string){
+    let params =  "id="+id;
     return new Promise((resolve,reject)=>{
-      this.http.post(this.base_path + 'delete/produits',id, {'headers':this.headers}).subscribe(
+      this.http.post(this.base_path + 'delete/produits',params, {'headers':this.headers}).subscribe(
         (data)=>{
             // authification
             console.log(data);
